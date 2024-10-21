@@ -21,7 +21,7 @@ jobs:
     - name: Install dependencies
       run: npm install
     
-  test:
+  test-start:
     runs-on: ubuntu-latest
     needs: build
     steps:
@@ -33,6 +33,8 @@ jobs:
         node-version: 18
     - name: Install dependencies
       run: npm install
+    - name: Start app
+      run: npm run start
     - name: Execute integration tests
       run: npm run test
 
